@@ -1,0 +1,61 @@
+/*//Spotlight for chrome
+//Designed by WeslyG 
+// Closed alpha 0.00.0.1.354 ca 
+//09.07.2016
+*/
+
+*{
+  margin: 0px;
+  padding: 0px;
+  outline: none;
+  }
+
+  body {
+    box-shadow: rgba(50, 50, 50, 0.85098) 0px 5px 30px;
+    border-radius: 4px;
+    background: rgba(0, 4, 42, 0.002);
+
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+    -webkit-flex-direction: column;
+
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+
+    outline: 1px solid #000;
+}
+
+#main {
+   background: rgba(0, 0, 0, 0);
+}
+
+  input {
+    width: 478px;
+    height: 67px;
+    border: none;
+    margin: 8px;
+    background: rgba(0,0,0,.01);
+    color: #A9A9A9;
+    font-size: 30px;
+    font-family:'Conv_Helv-3-Thin',Sans-Serif;
+    /*outline: 1px solid black;*/
+}
+
+button {
+  visibility: hidden;
+}
+
+.img {
+  position: absolute;
+  left: 7%;
+  top: 32%;
+  background: url('search.svg') no-repeat;
+  background-size: 100%;
+  /*outline: 1px solid black;*/
+  height: 37px;
+  width: 32px;
+}

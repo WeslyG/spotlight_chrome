@@ -1,0 +1,32 @@
+{
+"-g": "https://www.google.ru/",
+"-i" : "https://www.google.ru/imghp",
+"-t" : "https://translate.google.ru/",
+"-y" : "https://www.youtube.com/",
+"-gi" : "https://www.google.ru/imghp",
+"-gmap" : "https://maps.google.ru/",
+"-gt": "https://translate.google.ru/",
+"-gk" : "https://keep.google.com/",
+"-gp" : "https://play.google.com/store",
+"-gmail" : "https://mail.google.com/mail/u/0/",
+"-gmus" : "https://play.google.com/music/listen",
+"-gf": "https://fit.google.com/u/0/",
+"-gfit" : "https://fit.google.com/u/0/",
+"-gfilm" : "https://play.google.com/store/movies",
+"-gb": "https://play.google.com/books",
+"-gbook" : "https://play.google.com/books",
+"-you": "https://www.youtube.com/",
+"-gc" : "https://calendar.google.com/calendar/",
+"-gcal" : "https://calendar.google.com/calendar/",
+"-gdrive" : "https://drive.google.com/drive/",
+"-drive" : "https://drive.google.com/drive/",
+"-gd": "https://docs.google.com/document/u/0/",
+"-gdoc" : "https://docs.google.com/document/u/0/",
+"-gtab" : "https://docs.google.com/spreadsheets/u/0/",
+"-gform" : "https://docs.google.com/forms/u/0/",
+"-v" : "https://vk.com",
+"-vk" : "https://vk.com"
+}
+
+
+

@@ -1,0 +1,32 @@
+{
+  "name": "Spotlight for Chrome by WeslyG",
+  "description": "Closed Alpha client",
+  "version": "0.1.4.424",
+  "manifest_version": 2,
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+
+  "commands": {
+	"toggle-pin": {
+		"suggested_key": {
+		"default": "Ctrl+Space",
+		"windows": "Ctrl+Space"
+		},
+		"description": "Toggle tab pin",
+		"global": true
+		}
+	},
+
+	"permissions": ["desktopCapture", "http://*/" ],
+
+  "update_url": "https://clients2.google.com/service/update2/crx"
+}
