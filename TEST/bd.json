@@ -1,8 +1,5 @@
 {
 "Google": "https://google.com",
-
-"-g": "https://google.com",
-
 "Мой бизнес": "https://",
 "Адвордс": "https://",
 "AdWords": "https://",
@@ -101,6 +98,6 @@
 "stackoverflow.com": "https://",
 "Полезные": "https://",
 "lifehacker.ru": "https://",
-"Сми": "https://yandex.ru",
+"Сми": "https://",
 "магазины": "https://"
 }

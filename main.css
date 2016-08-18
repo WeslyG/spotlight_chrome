@@ -34,15 +34,12 @@
 }
 
   input {
-    position: absolute;
-    left: 90px;
     width: 478px;
     height: 67px;
     border: none;
     margin: 8px;
     background: rgba(0,0,0,.01);
-    /*color: #A9A9A9;*/
-    color: #777;
+    color: #A9A9A9;
     font-size: 30px;
     font-family:'Conv_Helv-3-Thin',Sans-Serif;
     /*outline: 1px solid black;*/
@@ -61,18 +58,4 @@ button {
   /*outline: 1px solid black;*/
   height: 37px;
   width: 32px;
-}
-
-#google2 {
-  z-index: -9999;
-    position: relative;
-    width: 478px;
-    margin-top: 24px;
-    margin-left: 21px;
-    height: 67px;
-    background: rgba(0,0,0,.01);
-    color: #777;
-    font-size: 30px;
-    font-family:'Conv_Helv-3-Thin',Sans-Serif;
-    /*outline: 1px solid black;*/
 }

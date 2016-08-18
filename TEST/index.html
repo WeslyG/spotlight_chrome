@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'bd.json', false);
+xhr.send();
+
+var key = "Google"; // ввод с клавиатуры вот сюда!
+
+if (xhr.status != 200) {
+    alert( xhr.status + ': ' + xhr.statusText );
+    }
+    else {
+            var Ari = JSON.parse(xhr.responseText);
+            if (key in Ari) { // наличие 
+        
+        for (var key2 in Ari) { //перебираем все
+                var que = (Ari[key]);
+                    }
+                console.log(que);
+                }
+            }
+
+</script>
+</body>
+</html>

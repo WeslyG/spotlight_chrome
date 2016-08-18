@@ -1,6 +1,5 @@
 //Designed by Weslyg 08.07.2016
 'use strict';
-//hey you!
 
 const DESKTOP_MEDIA = ['screen', 'window'];
 var myVar;
