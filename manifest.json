@@ -1,7 +1,7 @@
 {
-	"name": "Spotlight for Chrome by WeslyG",
-	"description": "Closed Alpha client",
-	"version": "0.1.4.424",
+	"name": "Spotlight for Chrome",
+	"description": "open beta spotlight client",
+	"version": "0.1.6.424",
 	"manifest_version": 2,
 	"icons": {
 		"16": "img/icon16.png",

@@ -35,14 +35,14 @@
 
   input {
     width: 478px;
-    height: 67px;
+    height: 40px;
     border: none;
-    margin: 8px;
+    margin: 22px;
     background: rgba(0,0,0,.01);
     color: #A9A9A9;
-    font-size: 30px;
+    font-size: 33px;
     font-family:'Conv_Helv-3-Thin',Sans-Serif;
-    /*outline: 1px solid black;*/
+/*    outline: 1px solid black;*/
 }
 
 button {
@@ -52,10 +52,10 @@ button {
 .img {
   position: absolute;
   left: 7%;
-  top: 32%;
+  top: 30%;
   background: url('img/search.svg') no-repeat;
   background-size: 100%;
-  /*outline: 1px solid black;*/
+/*  outline: 1px solid black;*/
   height: 37px;
   width: 32px;
 }
