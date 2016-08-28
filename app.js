@@ -36,33 +36,59 @@ document.getElementById("google")
 
 //Запрашиваем поисковики (ключи)
 var req = new XMLHttpRequest();
-req.open('GET', 'KeyDB.json', true);
-req.onreadystatechange = function (aEvt) {
+var req1 = new XMLHttpRequest();
+
+req.open('GET', 'http://weslyg.tk/spotlight_chrome/KeyDB.json', true);
+req.onreadystatechange = function (aEvt1) {
 	if (req.readyState == 4) {
 		 if(req.status == 200){
 			Ari = JSON.parse(req.responseText);
-	}
-		 else {
-			console.log("Error loading page\n");
 		}
-	}
-};
-req.send(null);
+		 else if (req.status !== 200) { //берем локальные данные 
+				req1.open('GET', './setting backup/KeyDB.json', true);
+				req1.onreadystatechange = function (aEvt1) {
+					if (req1.readyState == 4) {
+						 if(req1.status == 200){
+							Ari = JSON.parse(req1.responseText);
+						}
+						 else {
+							console.log("Ошибочка чет");
+							}
+						}
+					};
+					req1.send(null);
+				}
+			}
+		};
+		req.send(null);
 
 //запрашиваем Главные страницы
+var Req1 = new XMLHttpRequest();
 var Req = new XMLHttpRequest();
-Req.open('GET', 'FirstPG.json', true);
+
+Req.open('GET', 'http://weslyg.tk/spotlight_chrome/FirstPG.json', true);
 Req.onreadystatechange = function (aEvt1) {
 	if (Req.readyState == 4) {
 		 if(Req.status == 200){
 			Aria = JSON.parse(Req.responseText);
-	}
-		 else {
-			console.log("Error loading page\n");
 		}
-	}
-};
-Req.send(null);
+		 else if (Req.status !== 200) { //берем локальные данные 
+				Req1.open('GET', './setting backup/FirstPG.json', true);
+				Req1.onreadystatechange = function (aEvt1) {
+					if (Req1.readyState == 4) {
+						 if(Req1.status == 200){
+							Aria = JSON.parse(Req1.responseText);
+						}
+						 else {
+							console.log("Ошибочка чет");
+							}
+						}
+					};
+					Req1.send(null);
+				}
+			}
+		};
+		Req.send(null);
 
 //Мач чистого ключа (второй список)
 
@@ -71,16 +97,13 @@ myVar = document.getElementById('google').value;
 
 var Matching = myVar.match(pattern); //матчим строку по патерну 
 
-
 	// матч чистого ключа
-
-		if (Aria[myVar] != undefined) {   //переменить тут json
-			window.open( Ari[myVar] );
+		if (Aria[myVar] != undefined) {
+			window.open( Aria[myVar] );
 			// window.close();
 			}
 
 				// матч ключа в подстроке (с удалением)
-
 		else if (Matching != null) {
 				var Str = Matching.toString();    // вместо обьекта делаем сторку
 				var ComMatch = Str.toLowerCase();   //опускаем ее для избежания прожатия заглавных ключей

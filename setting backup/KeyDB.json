@@ -1,6 +1,5 @@
 {
-"-g": "https://www.google.ru/",
-"-f": "https://www.facebook.ru/",
+"-g": "https://www.google.ru/search?q=",
 "-i" : "https://www.google.ru/imghp",
 "-t" : "https://translate.google.ru/?hl=ru#en/ru/",
 "-y" : "https://www.youtube.com/",
@@ -28,3 +27,6 @@
 "-v" : "https://vk.com",
 "-vk" : "https://vk.com"
 }
+
+
+
