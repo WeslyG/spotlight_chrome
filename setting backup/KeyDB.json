@@ -28,8 +28,15 @@
 "-v" : "https://vk.com/search?c%5Bq%5D=",
 "-vk" : "https://vk.com/search?c%5Bq%5D=",
 "-w" : "https://ru.wikipedia.org/wiki/",
-"-yi" : "https://yandex.ru/images/search?text="
+"-yi" : "https://yandex.ru/images/search?text=",
+"-a" : "https://www.avito.ru/rossiya?q=",
+"-am" : "https://www.avito.ru/moskva?q=",
+"-ae" : "https://www.avito.ru/ekaterinburg?q=",
+"-ym" : "https://market.yandex.ru/search.xml?cvredirect=2&text=",
+"-op" : "http://ru.op.gg/summoner/userName=",
+"-ali" : "https://ru.aliexpress.com/wholesale?catId=0&initiative_id=SB_20160829054034&SearchText=",
+"-sof" : "http://stackoverflow.com/search?q=",
+"-che" : "https://chrome.google.com/webstore/search/",
+"-ins" : "https://www.instagram.com/",
+"-inst" : "https://www.instagram.com/"
 }
-
-
-

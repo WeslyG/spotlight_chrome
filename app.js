@@ -5,7 +5,7 @@ const DESKTOP_MEDIA = ['screen', 'window'];
 var myVar;
 var Ari;
 var Aria;
-var pattern = /-\w{1,4}/i;
+var pattern = /-\w{1,5}.?/i;
 var link = /(https?):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?/i;
 //функция автофокуса поля ввода
 document.getElementById('google').focus();
@@ -95,39 +95,41 @@ Req.onreadystatechange = function (aEvt1) {
 document.querySelector('#start').addEventListener('click', function() {
 myVar = document.getElementById('google').value;
 
-var Matching = myVar.match(pattern); //матчим строку по патерну 
+var MatchingStart = myVar.match(pattern); //матчим строку по патерну 
+
+	if (MatchingStart != null) {
+		var MatchingMiddle = MatchingStart.toString();
+		var Matching = MatchingMiddle.replace( " ", "");
+			}
 
 	// матч чистого ключа
 		if (Aria[myVar] != undefined) {
 			window.open( Aria[myVar] );
-			// window.close();
 			}
 
 				// матч ключа в подстроке (с удалением)
-		else if (Matching != null) {
+		else if (Matching in Ari) {
 				var Str = Matching.toString();    // вместо обьекта делаем сторку
 				var ComMatch = Str.toLowerCase();   //опускаем ее для избежания прожатия заглавных ключей
+				var resql = myVar.replace( pattern, "");
+				window.open(Ari[ComMatch] + resql);
+					}
 
-					var resql = myVar.replace( pattern, "");
-					window.open(Ari[ComMatch] + resql);
-						}
-
-				// Матч на http 
+				// Матч http
+				//добавить локалхосты и ftp 
 				else if (myVar.match(link)) {
-				console.log("мы тут!");
 				window.open(myVar);
-						 }
+					}
 
-			else if ((myVar.charAt(myVar.length-3) == '.') || (myVar.charAt(myVar.length-4) == '.'))
-						{
+		else if ((myVar.charAt(myVar.length-3) == '.') || (myVar.charAt(myVar.length-4) == '.')) {
 				window.open('http://' + myVar);// подумать! 
-						}
+					}
 
 		 //На гуглю
 		 else {
 			window.open('https://www.google.ru/search?q=' + myVar);
 			// console.log("Идем в гуглю");
-		 }
+					}
 });
 
 
