@@ -2,7 +2,7 @@
 "-g": "https://www.google.ru/",
 "-f": "https://www.facebook.ru/",
 "-i" : "https://www.google.ru/imghp",
-"-t" : "https://translate.google.ru/?hl=ru#en/ru/",
+"-t" : "https://translate.google.ru/",
 "-y" : "https://www.youtube.com/",
 "-gi" : "https://www.google.ru/imghp",
 "-gmap" : "https://maps.google.ru/",

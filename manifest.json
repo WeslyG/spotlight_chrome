@@ -1,7 +1,7 @@
 {
 	"name": "Spotlight for Chrome",
-	"description": "open beta spotlight client",
-	"version": "0.1.6.424",
+	"description": "spotlight chrome client",
+	"version": "1.2.0.14",
 	"manifest_version": 2,
 	"icons": {
 		"16": "img/icon16.png",
