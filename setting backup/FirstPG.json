@@ -42,5 +42,6 @@
 "-yr" : "https://radio.yandex.ru/",
 "-yn" : "https://news.yandex.ru/",
 "-ins" : "https://www.instagram.com/",
-"-inst" : "https://www.instagram.com/"
+"-inst" : "https://www.instagram.com/",
+"-plex" : "http://127.0.0.1:32400/web/index.html"
 }

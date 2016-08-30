@@ -5,6 +5,7 @@ const DESKTOP_MEDIA = ['screen', 'window'];
 var myVar;
 var Ari;
 var Aria;
+var locl = /localhost(:\w+)?/i;
 var pattern = /-\w{1,5}.?/i;
 var link = /(https?):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?/i;
 //функция автофокуса поля ввода
@@ -18,7 +19,6 @@ document.getElementById('google').focus();
 document.getElementById('google').onblur = function() {
    window.close();
 }
-
 
 // обработчик энтра плюс Эскейпа
 document.getElementById("google")
@@ -120,6 +120,11 @@ var MatchingStart = myVar.match(pattern); //матчим строку по па�
 				else if (myVar.match(link)) {
 				window.open(myVar);
 					}
+
+				else if (myVar.match(locl))  {
+					console.log("мы тут!");
+					window.open("http://" + myVar);
+				}
 
 		else if ((myVar.charAt(myVar.length-3) == '.') || (myVar.charAt(myVar.length-4) == '.')) {
 				window.open('http://' + myVar);// подумать! 
