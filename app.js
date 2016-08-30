@@ -7,7 +7,7 @@ var Ari;
 var Aria;
 var locl = /localhost(:\w+)?/i;
 var pattern = /-\w{1,5}.?/i;
-var link = /(https?):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?/i;
+var link = /((https?)|(ftp)):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?/i;
 //функция автофокуса поля ввода
 document.getElementById('google').focus();
 
@@ -90,6 +90,35 @@ Req.onreadystatechange = function (aEvt1) {
 		};
 		Req.send(null);
 
+var dbase;
+var Db = new XMLHttpRequest();
+var Db1 = new XMLHttpRequest();
+
+Db.open('GET', 'http://weslyg.tk/spotlight_chrome/DB_wors.json', true);
+Db.onreadystatechange = function (aEvt1) {
+	if (Db.readyState == 4) {
+		 if(Db.status == 200){
+			dbase = JSON.parse(Db.responseText);
+		}
+		 else if (Db.status !== 200) { //берем локальные данные 
+				Db1.open('GET', './setting backup/DB_wors.json', true);
+				Db1.onreadystatechange = function (aEvt1) {
+					if (Db1.readyState == 4) {
+						 if(Db1.status == 200){
+							dbase = JSON.parse(Db1.responseText);
+						}
+						 else {
+							console.log("Ошибочка чет");
+							}
+						}
+					};
+					Db1.send(null);
+				}
+			}
+		};
+		Db.send(null);
+
+
 //Мач чистого ключа (второй список)
 
 document.querySelector('#start').addEventListener('click', function() {
@@ -97,14 +126,16 @@ myVar = document.getElementById('google').value;
 
 var MatchingStart = myVar.match(pattern); //матчим строку по патерну 
 
-	if (MatchingStart != null) {
-		var MatchingMiddle = MatchingStart.toString();
-		var Matching = MatchingMiddle.replace( " ", "");
-			}
+if (MatchingStart != null) {
+	var MatchingMiddle = MatchingStart.toString();
+	var Matching = MatchingMiddle.replace( " ", "");
+	console.log("мы тут!1");
+		}
 
 	// матч чистого ключа
 		if (Aria[myVar] != undefined) {
 			window.open( Aria[myVar] );
+			console.log("мы тут!2");
 			}
 
 				// матч ключа в подстроке (с удалением)
@@ -113,21 +144,30 @@ var MatchingStart = myVar.match(pattern); //матчим строку по па�
 				var ComMatch = Str.toLowerCase();   //опускаем ее для избежания прожатия заглавных ключей
 				var resql = myVar.replace( pattern, "");
 				window.open(Ari[ComMatch] + resql);
+				console.log("мы тут!3");
 					}
 
-				// Матч http
-				//добавить локалхосты и ftp 
-				else if (myVar.match(link)) {
+				// Матч http ftp
+		else if (myVar.match(link)) {
 				window.open(myVar);
+				console.log("мы тут!4");
 					}
 
-				else if (myVar.match(locl))  {
-					console.log("мы тут!");
+				//матч localhost
+		else if (myVar.match(locl))  {
+					console.log("мы тут!5");
 					window.open("http://" + myVar);
 				}
 
+				//матч ключей сайтов
+		else if (myVar in dbase){
+			window.open(dbase[myVar]);
+			console.log("мы тут!6");
+		}
+
 		else if ((myVar.charAt(myVar.length-3) == '.') || (myVar.charAt(myVar.length-4) == '.')) {
 				window.open('http://' + myVar);// подумать! 
+				console.log("мы тут!7");
 					}
 
 		 //На гуглю
@@ -136,54 +176,3 @@ var MatchingStart = myVar.match(pattern); //матчим строку по па�
 			// console.log("Идем в гуглю");
 					}
 });
-
-
-
-
-
-
-
-
-
-
-	// if ((myVar.charAt(myVar.length-3) == '.') || (myVar.charAt(myVar.length-4) == '.'))
-	// {
-	//   window.open('https://' + myVar);// подумать! 
-	// }
-	// // иначе начинаем ставить флаги (продумать)
-	// else if ((myVar.charAt(myVar.length-2) == '-') && (myVar.charAt(myVar.length-1) == 'y')) {
-	//  window.open('https://yandex.ru/search/?text=' + myVar.slice(0, -2));
-	// }
-	// // переводчик 
-	// else if ((myVar.charAt(myVar.length-2) == '-') && (myVar.charAt(myVar.length-1) == 't')) {
-	//  window.open('https://translate.google.ru/?hl=ru#en/ru/' + myVar.slice(0, -2));
-	// }
-	//  // переводчик яндекс 
-	// else if ((myVar.charAt(myVar.length-3) == '-') && (myVar.charAt(myVar.length-2) == 'y') && (myVar.charAt(myVar.length-1) == 't')) {
-	//  window.open('https://translate.yandex.ru/?text=' + myVar.slice(0, -3) + '&lang=en-ru');
-	// }
-	//  // кипы
-	// else if ((myVar.charAt(myVar.length-2) == '-') && (myVar.charAt(myVar.length-1) == 'k')) {
-	//  window.open('https://keep.google.com/u/0/#search/text%3D' + myVar.slice(0, -2));
-	// }
-	// // вк 
-	// else if ((myVar.charAt(myVar.length-2) == '-') && (myVar.charAt(myVar.length-1) == 'v')) {
-	//  window.open('https://new.vk.com/search?c%5Bq%5D=' + myVar.slice(0, -2) + '&c%5Bsection%5D=auto');
-	// }
-	// //wiki
-	//  else if ((myVar.charAt(myVar.length-2) == '-') && (myVar.charAt(myVar.length-1) == 'w')) {
-	//  window.open('https://ru.wikipedia.org/wiki/' + myVar.slice(0, -2));
-	// }
-	// //гугл картинки 
-	// else if ((myVar.charAt(myVar.length-3) == '-') && (myVar.charAt(myVar.length-2) == 'g') && (myVar.charAt(myVar.length-1) == 'i')) {
-	//  window.open('https://www.google.ru/search?newwindow=1&tbm=isch&q=' + myVar.slice(0, -3));
-	// }
-	// //яндекс картинки
-	// else if ((myVar.charAt(myVar.length-3) == '-') && (myVar.charAt(myVar.length-2) == 'y') && (myVar.charAt(myVar.length-1) == 'i')) {
-	//  window.open('https://yandex.ru/images/search?text=' + myVar.slice(0, -3));
-	// }
-	// else {
-	//    window.open('https://www.google.ru/search?q=' + myVar); 
-	// }
-
-	//    window.close();
