@@ -44,5 +44,8 @@
 "-yn" : "https://news.yandex.ru/",
 "-ins" : "https://www.instagram.com/",
 "-inst" : "https://www.instagram.com/",
-"-plex" : "http://127.0.0.1:32400/web/index.html"
+"-plex" : "http://127.0.0.1:32400/web/index.html",
+"-tw" : "https://twitter.com/",
+"-cont" : "https://contacts.google.com/u/0/preview/all",
+"-gcont" : "https://contacts.google.com/u/0/preview/all"
 }
